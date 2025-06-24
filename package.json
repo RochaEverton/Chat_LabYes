@@ -1,10 +1,10 @@
 {
   "name": "chat_labyes",
   "version": "1.0.0",
-  "description": "",
+  "description": "- iniciado o projeto Node npm init -y",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
