@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+  <meta charset="UTF-8">
   <title>Chat com Login</title>
-  <style>
-    body { font-family: Arial; padding: 20px; }
-    #login, #chat { display: none; }
-    #messages { list-style: none; padding: 0; max-height: 300px; overflow-y: auto; }
-    #messages li { padding: 5px 10px; border-bottom: 1px solid #ccc; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="login">
@@ -15,59 +11,19 @@
     <input type="text" id="username" placeholder="Seu nome" />
     <input type="password" id="password" placeholder="Senha de acesso" />
     <button onclick="entrar()">Entrar</button>
-    <p id="login-error" style="color:red;"></p>
+    <p id="login-error"></p>
   </div>
 
   <div id="chat">
-    <h2>Chat Online</h2>
+    <h2>Chat LabYes - Turma 3</h2>
     <ul id="messages"></ul>
     <form id="form">
-      <input id="input" autocomplete="off" placeholder="Digite sua mensagem" /><button>Enviar</button>
+      <input id="input" autocomplete="off" placeholder="Digite sua mensagem" />
+      <button>Enviar</button>
     </form>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script>
-    const socket = io();
-    let nome = '';
-
-    const loginDiv = document.getElementById('login');
-    const chatDiv = document.getElementById('chat');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const loginError = document.getElementById('login-error');
-
-    loginDiv.style.display = 'block';
-
-    function entrar() {
-      const senhaCorreta = '1234'; // 🔐 Altere aqui a senha
-
-      if (passwordInput.value === senhaCorreta && usernameInput.value.trim() !== '') {
-        nome = usernameInput.value.trim();
-        loginDiv.style.display = 'none';
-        chatDiv.style.display = 'block';
-      } else {
-        loginError.textContent = 'Nome ou senha inválidos!';
-      }
-    }
-
-    const form = document.getElementById('form');
-    const input = document.getElementById('input');
-    const messages = document.getElementById('messages');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (input.value) {
-        socket.emit('chat message', { nome: nome, texto: input.value });
-        input.value = '';
-      }
-    });
-
-    socket.on('chat message', (msg) => {
-      const li = document.createElement('li');
-      li.textContent = `${msg.nome}: ${msg.texto}`;
-      messages.appendChild(li);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

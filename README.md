@@ -3,7 +3,7 @@
 npm init -y
 
 - instalado as dependências:
-npm i express socket.io
+npm i express socket.io dotenv fs-extra
 
 O Express.js é um framework Back-end Node que cria abstrações de rotas, middlewares e muitas outras funções para facilitar a criação tanto de API's quanto SPA's.
 
