@@ -1,0 +1,21 @@
+{
+  "name": "chat_labyes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RochaEverton/Chat_LabYes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RochaEverton/Chat_LabYes/issues"
+  },
+  "homepage": "https://github.com/RochaEverton/Chat_LabYes#readme"
+}
